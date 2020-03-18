@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    {{msg}}
+    <div>
+      <input type="text" v-model="info">
+      <button v-on:click="handleClick">添加</button>
+    </div>
+    <ul>
+      <todo-item v-for="item in list" v-bind:item="item"></todo-item>
+    </ul>
   </div>
 </template>
 
@@ -11,7 +17,6 @@ import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
   }
 }
 </script>
